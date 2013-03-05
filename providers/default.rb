@@ -48,13 +48,7 @@ end
 
 def install_prerequisites
   @run_context.include_recipe "git"
-
-  # TODO: Eventually, we'll use this when there really is an
-  # opscode-ruby cookbook :) Until then, we'll just steal from
-  # opscode-ci.
-  #
-  # @run_context.include_recipe "opscode-ruby"
-  @run_context.include_recipe "opscode-ci::ruby"
+  @run_context.include_recipe "opscode-ruby"
 
   directory new_resource.checkout_dir do
     mode "0777"
